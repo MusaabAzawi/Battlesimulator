@@ -33,11 +33,27 @@ class Tank
 
     void Push(vec2 direction, float magnitude);
 
+    int getGridPosX();
+
+    int getGridPosY();
+
+    void setGridPosX();
+
+    void setGridPosY();
+
+    void setGridPosX(int pos);
+
+    void setGridPosY(int pos);
+
+    int getHealth();
+
     vec2 position;
     vec2 speed;
     vec2 target;
 
     int health;
+    int gridPosX;
+    int gridPosY;
 
     float collision_radius;
     vec2 force;

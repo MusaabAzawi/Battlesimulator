@@ -27,7 +27,9 @@ Tank::Tank(
       active(true),
       current_frame(0),
       tank_sprite(tank_sprite),
-      smoke_sprite(smoke_sprite)
+      smoke_sprite(smoke_sprite),
+      gridPosX(0),
+      gridPosY(0)
 {
 }
 
@@ -96,6 +98,41 @@ int Tank::CompareHealth(const Tank& other) const
 void Tank::Push(vec2 direction, float magnitude)
 {
     force += direction * magnitude;
+}
+
+int Tank::getGridPosX()
+{
+    return gridPosX;
+}
+
+int Tank::getGridPosY()
+{
+    return gridPosY;
+}
+
+void Tank::setGridPosX()
+{
+    gridPosX = (position.x / 40);
+}
+
+void Tank::setGridPosY()
+{
+    gridPosY = (position.y / 40);
+}
+
+void Tank::setGridPosX(int pos)
+{
+    gridPosX = pos;
+}
+
+void Tank::setGridPosY(int pos)
+{
+    gridPosY = pos;
+}
+
+int Tank::getHealth()
+{
+    return health;
 }
 
 } // namespace Tmpl8
